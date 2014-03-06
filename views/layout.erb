@@ -1,0 +1,16 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css">
+		<title>Awesome Test App</title>
+	</head>
+
+	<body class="container">
+		<%= flash[:notice] if flash[:notice] %>
+		<%= flash[:error] %>
+		<%= yield %>
+	</body>
+</html>
+
+
+
