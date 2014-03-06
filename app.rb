@@ -61,6 +61,7 @@ end
 
 post "/posts" do
 	@post = Post.new(params[:post])
+	puts "@post" 
 end
 
 
