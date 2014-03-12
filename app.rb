@@ -34,7 +34,7 @@ get "/" do
 	erb :index
 end
 
-post "/" do
+post "/sign-in" do
 	@user = User.where(email: params[:username] ).first
 
 	if @user && ( @user.password == params[:password] )
@@ -53,27 +53,30 @@ post "/" do
 	end
 end
 
-
-get "/posts" do
-
+get "/new" do 
+	
 	erb :post
 end
 
-post "/posts" do
-	@post = Post.new(params[:post])
-	puts "@post" 
-end
 
+post "/create_post" do 
+  puts params
+  if params[:post][:title] && params[:post][:body]
 
+    @post = Post.create(params[:post])
 
-get "/home" do 
-	
-	erb :layout
-end
+    if @post
+      redirect to("/posts")
+    else
+      redirect to("/new")
+    end  
 
+   else
+      redirect to("/new") 
+   end 
+end   
 
-get "/basement" do 
-	"test"
+get "/posts" do
 	
 	erb :home
 end

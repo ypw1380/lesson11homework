@@ -1,0 +1,20 @@
+<h1>  New Post Time</h1>
+<hr>
+
+<body id="blah">
+<form method="Post" action="/create_post">
+<input type="hidden" name="[post]user_id" value="<%=current_user.id%>">
+
+<label for="title">Title</label>
+<input type="text" name="[post]title" id="title" placeholder="Give your post a title">
+<p></p>
+<label for="post">Body</label>
+<textarea name="[post]body" id="post" placeholder="describe the weather"  cols="30" rows="5"></textarea>
+<input type="submit" >
+
+</form>
+
+<a href="/">home</a>
+
+
+</body>
