@@ -1,17 +1,14 @@
-<h3>Hello..</h3>
+<h3>Hello there..</h3>
 <%= current_user.email %>
 
-<a href="/new">Create new posting!</a>
+<a href="/new">Click here to create a new posting!!</a>
 
 
 <ul>
   <% current_user.posts.order("created_at DESC").each do |post| %>
-    <li style="margin: 10px; padding: 10px; border: 1px solid grey;">
-      <b>
-        <%= post.title %>
-      </b>
-      <p>
-        <%= post.body %>
-      </p>
+    <li>
+      <b><%= post.title %></b>
+      <p><%= post.body %></p>
     </li>
   <% end %>
+</ul>
